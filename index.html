@@ -140,6 +140,85 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-如何搭建blog" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/11/22/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAblog/">搭建博客</a>
+    </h1>
+  
+
+        
+        <a href="/2021/11/22/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAblog/" class="archive-article-date">
+  	<time datetime="2021-11-22T02:18:46.707Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-11-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="记录如何搭建博客"><a href="#记录如何搭建博客" class="headerlink" title="记录如何搭建博客"></a>记录如何搭建博客</h4><h6 id="1-安装Git-node-js"><a href="#1-安装Git-node-js" class="headerlink" title="1.安装Git node.js"></a>1.安装Git node.js</h6><h6 id="2-用git安装hexo"><a href="#2-用git安装hexo" class="headerlink" title="2.用git安装hexo"></a>2.用git安装hexo</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli	//安装hexo</span><br><span class="line">hexo init myblog 		//初始化</span><br><span class="line">cd myblog 				//进入这个myblog文件夹</span><br><span class="line">npm install</span><br><span class="line">hexo g                  //生成文章</span><br><span class="line">hexok s	//部署到本地服务器localhost:4000，ctrlc关闭就不可见</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h6 id="3-部署到Github"><a href="#3-部署到Github" class="headerlink" title="3.部署到Github"></a>3.部署到Github</h6><p>1.创建githubname.github.io仓库</p>
+<p>2.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;yourname&quot;</span><br><span class="line">git config --global user.email &quot;youremail&quot;</span><br><span class="line">ssh-keygen -t rsa -C &quot;youremail&quot; //一路回车</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>3.到电脑user里找ssh.文件，代表密钥，<code>id_rsa</code>是你这台电脑的私人秘钥，不能给别人看的，<code>id_rsa.pub</code>是公共秘钥，可以随便给别人看。把这个公钥放在GitHub上，这样当你链接GitHub自己的账户时，它就会根据公钥匹配你的私钥，当能够相互匹配时，才能够顺利的通过git上传你的文件到GitHub上。而后在GitHub的setting中，找到SSH keys的设置选项，点击<code>New SSH key</code>把<code>id_rsa.pub</code>里面的信息复制进去。</p>
+<p>4.在站点配置文件<code>_config.yml</code>，最后修改为</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https://github.com/YourgithubName/YourgithubName.github.io.git</span><br><span class="line">  branch: master</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save //修改完然后下载deployer</span><br><span class="line"></span><br><span class="line">hexo clean			//清除缓存</span><br><span class="line">hexo s				//先在本地运行，没错再部署到网上</span><br><span class="line">hexo g				</span><br><span class="line">hexo d</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>输入完用户名密码就可以在<code>http://yourname.github.io</code> 看到</p>
+<h6 id="4-个人域名"><a href="#4-个人域名" class="headerlink" title="4.个人域名"></a>4.个人域名</h6><p>1.去阿里云等买一个</p>
+<p>2.解析域名</p>
+<p>3.到Github的博客仓库setting中找<code>Custom domain</code>，输入域名，在博客文件下生成<code>CNAME </code>无后缀文件,里面写买的域名</p>
+<p>4.hexo 三连 </p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/11/22/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAblog/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-yyy " class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
