@@ -16,7 +16,7 @@
 <meta property="og:description" content="记录如何搭建博客1.安装Git node.js2.用git安装hexo1234567npm install -g hexo-cli	&#x2F;&#x2F;安装hexohexo init myblog 		&#x2F;&#x2F;初始化cd myblog 				&#x2F;&#x2F;进入这个myblog文件夹npm installhexo g                  &#x2F;&#x2F;生成文章hexok s	&#x2F;&#x2F;部署到本地服务器localhost:4000">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-11-22T02:18:46.707Z">
-<meta property="article:modified_time" content="2021-11-22T02:36:10.665Z">
+<meta property="article:modified_time" content="2021-11-22T02:49:26.245Z">
 <meta property="article:author" content="toastqueen">
 <meta name="twitter:card" content="summary">
   
@@ -175,10 +175,22 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save //修改完然后下载deployer</span><br><span class="line"></span><br><span class="line">hexo clean			//清除缓存</span><br><span class="line">hexo s				//先在本地运行，没错再部署到网上</span><br><span class="line">hexo g				</span><br><span class="line">hexo d</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p>输入完用户名密码就可以在<code>http://yourname.github.io</code> 看到</p>
-<h6 id="4-个人域名"><a href="#4-个人域名" class="headerlink" title="4.个人域名"></a>4.个人域名</h6><p>1.去阿里云等买一个</p>
-<p>2.解析域名</p>
-<p>3.到Github的博客仓库setting中找<code>Custom domain</code>，输入域名，在博客文件下生成<code>CNAME </code>无后缀文件,里面写买的域名</p>
-<p>4.hexo 三连 </p>
+<h6 id="4-个人域名"><a href="#4-个人域名" class="headerlink" title="4.个人域名"></a>4.个人域名</h6><ol>
+<li><p>去阿里云等买一个域名</p>
+</li>
+<li><p>解析域名</p>
+</li>
+<li><p>到Github的博客仓库setting中找<code>Custom domain</code>，输入域名，在博客文件下生成<code>CNAME </code>无后缀文件,里面写买的域名</p>
+</li>
+<li><p>hexo 三连 </p>
+</li>
+</ol>
+<h6 id="5-可能出现的问题"><a href="#5-可能出现的问题" class="headerlink" title="5.可能出现的问题"></a>5.可能出现的问题</h6><ul>
+<li>hexo d不管用也不报错：可能是网络问题或没有清缓存</li>
+<li>hexo d后404：去GitHub重新填一次自定义域名</li>
+<li>hexo d后只有文字：<code>_config.yml</code>里的url没填对</li>
+<li>and more</li>
+</ul>
 
       
 
